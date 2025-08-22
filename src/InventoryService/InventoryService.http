@@ -1,6 +1,17 @@
 @InventoryService_HostAddress = http://localhost:5143
 
-GET {{InventoryService_HostAddress}}/weatherforecast/
+### InventoryService - Get All Products
+
+GET {{InventoryService_HostAddress}}/
 Accept: application/json
 
-###
+### InventoryService - Reserve items
+POST {{InventoryService_HostAddress}}/reserve-items
+Content-Type: application/json
+Accept: application/json
+
+{
+  "orderId": "00000000-0000-0000-0000-000000000001",
+  "itemName": "banana",
+  "numberOfItems": 1
+}
