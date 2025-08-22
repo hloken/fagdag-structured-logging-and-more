@@ -10,8 +10,10 @@
     <RootNamespace>Fagdag.StructuredLoggingAndMore.AppHost</RootNamespace>
   </PropertyGroup>
 
+  <Sdk Name="Aspire.AppHost.Sdk" Version="9.0.0" />
+  
   <ItemGroup>
-    <PackageReference Include="Aspire.Hosting.AppHost" Version="8.2.2" />
+    <PackageReference Include="Aspire.Hosting.AppHost" Version="9.4.1" />
   </ItemGroup>
 
   <ItemGroup>
