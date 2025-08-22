@@ -7,11 +7,16 @@
     <Nullable>enable</Nullable>
     <IsAspireHost>true</IsAspireHost>
     <UserSecretsId>30d6b321-8393-4e2f-929e-b984aa5e361b</UserSecretsId>
-    <RootNamespace>fagdag-structured-logging-and-more.AppHost</RootNamespace>
+    <RootNamespace>Fagdag.StructuredLoggingAndMore.AppHost</RootNamespace>
   </PropertyGroup>
 
   <ItemGroup>
     <PackageReference Include="Aspire.Hosting.AppHost" Version="8.2.2" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\InventoryService\InventoryService.csproj" IsAspireProjectReference="true" />
+    <ProjectReference Include="..\OrderService\OrderService.csproj" IsAspireProjectReference="true" />
   </ItemGroup>
 
 </Project>
