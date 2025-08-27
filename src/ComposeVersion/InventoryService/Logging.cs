@@ -1,5 +1,6 @@
 ﻿using Serilog;
 using Serilog.Core;
+using Serilog.Formatting.Compact;
 
 namespace InventoryService;
 
@@ -24,6 +25,7 @@ public static class Logging
             .Enrich.FromLogContext()
             .WriteTo.Console()
             .WriteTo.File("Logs/log-.txt", rollingInterval: RollingInterval.Day, shared:true)
+            .WriteTo.File(new CompactJsonFormatter(), "Logs/log-.json.txt", rollingInterval: RollingInterval.Day, shared:true)
             .WriteTo.Seq("http://localhost:5341") // Ensure Seq is running or adjust the URL as needed
             .CreateLogger();
     }

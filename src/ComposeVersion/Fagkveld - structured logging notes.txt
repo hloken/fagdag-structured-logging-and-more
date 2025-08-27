@@ -1,0 +1,55 @@
+Fagkveld - Structured Logging
+=============================
+
+Intro
+-----
+
+
+Logging classic
+---------------
+- Text-only
+- Console/Files
+
+Structured logging
+------------------
+- There is no "message"
+- Only message templates + Named properties/objects
+
+Demo
+----------
+- Intro to tech-stack: C#, .NET 8, Serilog, Seq, Docker + compose
+- Intro to demo-project: solution, OrderService, InventoryService, docker compose, http-file
+- Some examples in test project
+ 	* plain logging event
+ 	* handling domain errors
+ 	* exceptions
+
+Aggregated logging - Seq
+------------------------
+- Structured logging is even more usefull when aggregating logs in a tool/service like Seq or Aspire
+=> need to include environment names, service names, version labels ++
+
+Structured logging in practice
+------------------------------
+- always use message templates + properties, never "dumb" text-messages
+- be consistent in use of property-names across service-boundaries
+- de-structuring objects
+- scopes
+- VS extension/Rider inspector
+- don't log exception message as property, it's already part of exception
+- bootstrap-logger
+
+Beyond structured logging
+-------------------------
+- Seq
+- DataDog: better UI, monitoring
+- Splunk
+- Aspire
+++
+
+Links
+-----
+* Demo repo: https://github.com/hloken/fagkveld-structured-logging
+* .NET Core Logging: https://learn.microsoft.com/en-us/dotnet/core/extensions/logging
+* Serilog: https://serilog.net/
+* Seq: https://datalust.co/seq
