@@ -4,17 +4,15 @@ using OrderService.Contracts;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// Add service defaults & Aspire components.
-builder.AddServiceDefaults();
+// Serilog configuration
+builder.AddLogging("order");
 
 // Add services to the container.
 builder.Services.AddProblemDetails();
 
 builder.Services.AddHttpClient<InventoryApiClient>(client =>
 {
-    // This URL uses "https+http://" to indicate HTTPS is preferred over HTTP.
-    // Learn more about service discovery scheme resolution at https://aka.ms/dotnet/sdschemes.
-    client.BaseAddress = new("https+http://inventoryservice");
+    client.BaseAddress = new("http://localhost:5002");
 });
 
 var app = builder.Build();
@@ -54,7 +52,5 @@ app.MapPost("/place-order", async ([FromBody] PlaceOrderRequest request, Invento
 
     return Results.Accepted(value: new PlaceOrderResponse(true, orderId, string.Empty));
 });
-
-app.MapDefaultEndpoints();
 
 app.Run();

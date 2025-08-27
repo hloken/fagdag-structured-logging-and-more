@@ -13,8 +13,8 @@ var inventoryRepository = new InventoryRepository
 
 var builder = WebApplication.CreateBuilder(args);
 
-// Add service defaults & Aspire components.
-builder.AddServiceDefaults();
+// Serilog configuration
+builder.AddLogging("inventory");
 
 // Add services to the container.
 builder.Services.AddProblemDetails();
@@ -42,8 +42,6 @@ app.MapPost("/reserve-items", ([FromBody] ReserveItemsRequest request, Inventory
 app.MapGet("", (InventoryRepository inventory) =>
     new GetAllResponse(inventory.Items.Select(item => new GetAllResponseItem(item.Key, item.Value)).ToArray())
 );
-
-app.MapDefaultEndpoints();
 
 app.Run();
 

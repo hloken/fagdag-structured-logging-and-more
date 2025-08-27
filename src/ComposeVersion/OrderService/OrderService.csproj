@@ -8,7 +8,6 @@
 
   <ItemGroup>
     <ProjectReference Include="..\InventoryService\InventoryService.csproj" />
-    <ProjectReference Include="..\ServiceDefaults\ServiceDefaults.csproj" />
   </ItemGroup>
 
 </Project>

@@ -1,0 +1,19 @@
+networks:
+  fhi:
+    name: fhi
+    driver: bridge
+
+services:
+  seq:
+    container_name: seq
+    image: datalust/seq
+    restart: unless-stopped
+    ports:
+      - '5341:80'
+    volumes:
+      - /c/temp/seq:/data
+    environment:
+      ACCEPT_EULA: "Y"
+      SEQ_FIRSTRUN_NOAUTHENTICATION: True
+    networks:
+      fhi:

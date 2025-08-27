@@ -1,4 +1,4 @@
-@OrderService_HostAddress = http://localhost:5134
+@OrderService_HostAddress = http://localhost:5011
 
 ### OrderService - Place Order
 POST {{OrderService_HostAddress}}//place-order
