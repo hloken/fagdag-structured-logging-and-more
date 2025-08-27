@@ -1,0 +1,12 @@
+@OrderService_HostAddress = http://localhost:5134
+
+### OrderService - Place Order
+POST {{OrderService_HostAddress}}//place-order
+Content-Type: application/json
+Accept: application/json
+
+{
+    "itemName": "banana",
+    "numberOfItems": 1
+}
+
